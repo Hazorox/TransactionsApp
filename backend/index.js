@@ -1,6 +1,11 @@
-function lol() {
-    console.log("hola");
-}
-ich bin 20 years old and I ch havbe lol
-How are you?
-IA M NOT FINE I AM 
+import { ApolloServer } from "@apollo/server"
+import { startStandaloneServer } from "@apollo/server/standalone"
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+})
+
+const { url } = await startStandaloneServer(server)
+
+console.log(`🚀 Server ready at ${url}`)
